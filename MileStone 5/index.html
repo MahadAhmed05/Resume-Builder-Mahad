@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Resume</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="resume-container">
+      <div id="resume-display">
+        <section class="personal-info">
+          <h1 id="display-name">Mahad Ahmed</h1>
+          <p id="display-contact">
+            Contact: mahadahmed@example.com | +92 123 456345
+          </p>
+          <img src="m.JPG" alt="Profile Picture" />
+        </section>
+
+        <section class="education">
+          <h2>Education</h2>
+          <p id="display-education">Bachelor of Science in FAST University</p>
+        </section>
+
+        <section class="skills" id="skills-section">
+          <h2>Skills</h2>
+          <ul id="display-skills">
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>HTML & CSS</li>
+          </ul>
+        </section>
+        <button onclick="toggleVisibility('skills-section')">
+          Toggle Skills
+        </button>
+
+        <section class="work-experience">
+          <h2>Work Experience</h2>
+          <p id="display-experience">Software Developer at XYZ Company</p>
+        </section>
+
+        <button id="edit-button" onclick="toggleForm()">
+          Edit Information
+        </button>
+      </div>
+
+      <form id="resume-form" style="display: none">
+        <h2>Edit Your Information</h2>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" value="John Doe" />
+
+        <label for="contact">Contact:</label>
+        <input
+          type="text"
+          id="contact"
+          value="johndoe@example.com | +123 456 7890"
+        />
+
+        <label for="education">Education:</label>
+        <input
+          type="text"
+          id="education"
+          value="Bachelor of Science in Computer Science, ABC University"
+        />
+
+        <label for="skill1">Skill 1:</label>
+        <input type="text" id="skill1" value="JavaScript" />
+
+        <label for="skill2">Skill 2:</label>
+        <input type="text" id="skill2" value="TypeScript" />
+
+        <label for="skill3">Skill 3:</label>
+        <input type="text" id="skill3" value="HTML & CSS" />
+
+        <label for="experience">Work Experience:</label>
+        <input
+          type="text"
+          id="experience"
+          value="Software Developer at XYZ Corp"
+        />
+
+        <button type="button" onclick="updateResume()">Save Changes</button>
+      </form>
+      <button id="download-pdf">
+        <a
+          href="Muhammad Mahad Ahmed (1).pdf"
+          download="Resume.pdf"
+          style="text-decoration: none; color: inherit"
+        >
+          Download as PDF
+        </a>
+      </button>
+    </div>
+  </body>
+</html>
